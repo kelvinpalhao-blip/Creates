@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Natalina | Galeria / Ofertas</title>
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+</head>
+<body>
+    <header>
+        <div class="logo-area">
+            <img src="img/logo.png" alt="Logotipo da Loja Natalina" class="logo">
+            <h2>Magia de Natal</h2>
+        </div>
+        <button class="btn-menu" aria-label="Abrir menu">☰</button>
+        <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="galeria.html" class="ativo">Galeria / Ofertas</a>
+        <a href="contato.html">Contato</a>
+        </nav>
+        <button id="btn-musica" class="btn-natal">🎵 Tocar Música</button>
+    </header>
+
+    <main>
+        <section class="galeria-container revelar">
+            <h1>Galeria de Natal & Ofertas</h1>
+            <p>Clique em uma imagem para ampliá-la em nossa galeria lightbox!</p>
+
+            <div class="galeria-grid">
+                <img src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&w=600&q=80" alt="Árvore Iluminada" class="lightbox-img">
+                <img src="https://images.unsplash.com/photo-1543257580-7269da773bf5?auto=format&fit=crop&w=600&q=80" alt="Biscoitos Gourmet" class="lightbox-img">
+                <img src="https://images.unsplash.com/photo-1543589077-47d5199647ce?auto=format&fit=crop&w=600&q=80" alt="Presentes Decorados" class="lightbox-img">
+                <img src="https://images.unsplash.com/photo-1513297887119-d46091b24bfa?auto=format&fit=crop&w=600&q=80" alt="Velas e Luzes" class="lightbox-img">
+            </div>
+        </section>
+
+        <div id="modal-lightbox" class="modal">
+            <span class="fechar-modal">&times;</span>
+            <img class="modal-conteudo" id="img-modal">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Loja Natalina Magia de Natal. Todos os direitos reservados.</p>
+    </footer>
+
+    <button id="topo" title="Voltar ao topo">↑</button>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

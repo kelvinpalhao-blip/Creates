@@ -1,0 +1,32 @@
+LOJA: Magia de Natal
+SEGMENTO: Confeitaria & Kits Natalinos
+TURMA: 1TI_
+
+INTEGRANTES:
+- Integrante 1 (Nº xx) - Front-end e Estilização
+- Integrante 2 (Nº xx) - Programação JavaScript
+- Integrante 3 (Nº xx) - Catálogo e Conteúdo
+
+LINKS:
+Site (GitHub Pages): https://usuario.github.io/loja-natal-nomedaloja/
+Repositório (GitHub): https://github.com/usuario/loja-natal-nomedaloja
+Vídeo (YouTube): https://www.youtube.com/watch?v=...
+
+RECURSOS DE JAVASCRIPT IMPLEMENTADOS (11 recursos):
+1. Slideshow / Carrossel (index.html) - OBRIGATÓRIO
+2. Efeito Parallax via JS e CSS (index.html) - OBRIGATÓRIO
+3. Sons / Música de fundo e Efeitos (todas as páginas) - OBRIGATÓRIO
+4. Cards dinâmicos com 50 produtos (produtos.html e index.html) - OBRIGATÓRIO
+5. Filtro por categoria, busca por nome e ordenação por preço (produtos.html) - OBRIGATÓRIO
+6. Carrinho de compras com persistência no localStorage (produtos.html) - EXTRA
+7. Contagem regressiva para o Natal (sobre.html) - EXTRA
+8. Validação de formulário de contato com respostas visuais (contato.html) - EXTRA
+9. Menu Hambúrguer Responsivo (todas as páginas) - EXTRA
+10. Lightbox / Modal de visualização de imagem (galeria.html) - EXTRA
+11. Efeito de neve caindo via JS (todas as páginas) - EXTRA
+12. Animações ao rolar com IntersectionObserver & Botão Voltar ao Topo - EXTRA
+
+CRÉDITOS:
+- Imagens: Unsplash (unsplash.com) & Pixabay (pixabay.com)
+- Sons: Pixabay Audio (pixabay.com/sound-effects)
+- Fontes: Google Fonts (Mountains of Christmas, Poppins)

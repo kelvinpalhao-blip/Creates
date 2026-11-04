@@ -1,0 +1,35 @@
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--vermelho);
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .menu.aberto {
+        display: flex;
+    }
+
+    .btn-menu {
+        display: block;
+    }
+
+    .banner-conteudo h1 {
+        font-size: 2.2rem;
+    }
+
+    .filtros-container {
+        flex-direction: column;
+    }
+
+    .resumo-carrinho-bar {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}

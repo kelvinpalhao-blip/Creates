@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Natalina | Produtos</title>
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+</head>
+<body>
+    <header>
+        <div class="logo-area">
+            <img src="img/logo.png" alt="Logotipo da Loja Natalina" class="logo">
+            <h2>Magia de Natal</h2>
+        </div>
+        <button class="btn-menu" aria-label="Abrir menu">☰</button>
+        <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="produtos.html" class="ativo">Produtos</a>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="galeria.html">Galeria / Ofertas</a>
+        <a href="contato.html">Contato</a>
+        </nav>
+        <button id="btn-musica" class="btn-natal">🎵 Tocar Música</button>
+    </header>
+
+    <main>
+        <section class="catalogo-header revelar">
+            <h1>Nosso Catálogo Natalino</h1>
+            <p>Explore nossos 50 produtos artesanais e seleções de Natal!</p>
+
+            <div class="filtros-container">
+                <input type="text" id="busca" placeholder="Buscar produto por nome...">
+                <select id="categoria">
+                    <option value="todas">Todas as Categorias</option>
+                    <option value="Panetones e Chocotones">Panetones e Chocotones</option>
+                    <option value="Biscoitos Natalinos">Biscoitos Natalinos</option>
+                    <option value="Bolos e Tortas">Bolos e Tortas</option>
+                    <option value="Cestas e Kits">Cestas e Kits</option>
+                    <option value="Chocolates e Bebidas">Chocolates e Bebidas</option>
+                </select>
+                <select id="ordenacao">
+                    <option value="padrao">Ordenar por...</option>
+                    <option value="menor-preco">Menor Preço</option>
+                    <option value="maior-preco">Maior Preço</option>
+                    <option value="nome">Nome (A-Z)</option>
+                </select>
+            </div>
+            
+            <div class="resumo-carrinho-bar">
+                <span id="contador">Mostrando 50 de 50 produtos</span>
+                <div class="carrinho-info">
+                    🛒 Itens: <strong id="qtd-carrinho">0</strong> | Total: <strong id="total-carrinho">R$ 0,00</strong>
+                </div>
+            </div>
+        </section>
+
+        <section id="lista-produtos" class="grade-produtos revelar"></section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Loja Natalina Magia de Natal. Todos os direitos reservados.</p>
+    </footer>
+
+    <button id="topo" title="Voltar ao topo">↑</button>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

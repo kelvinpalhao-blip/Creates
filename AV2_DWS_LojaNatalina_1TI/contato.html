@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Natalina | Contato</title>
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+</head>
+<body>
+    <header>
+        <div class="logo-area">
+            <img src="img/logo.png" alt="Logotipo da Loja Natalina" class="logo">
+            <h2>Magia de Natal</h2>
+        </div>
+        <button class="btn-menu" aria-label="Abrir menu">☰</button>
+        <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="galeria.html">Galeria / Ofertas</a>
+        <a href="contato.html" class="ativo">Contato</a>
+        </nav>
+        <button id="btn-musica" class="btn-natal">🎵 Tocar Música</button>
+    </header>
+
+    <main>
+        <section class="contato-container revelar">
+            <h1>Fale Conosco</h1>
+            <p>Tem alguma dúvida ou deseja fazer um pedido corporativo especial de Natal? Envie uma mensagem!</p>
+
+            <form id="form-contato" class="form-natal">
+                <div class="campo">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" placeholder="Seu nome completo">
+                </div>
+                <div class="campo">
+                    <label for="email">E-mail de Contato:</label>
+                    <input type="email" id="email" placeholder="seuemail@exemplo.com">
+                </div>
+                <div class="campo">
+                    <label for="assunto">Assunto:</label>
+                    <input type="text" id="assunto" placeholder="Assunto da sua mensagem">
+                </div>
+                <div class="campo">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..."></textarea>
+                </div>
+                <button type="submit" class="btn-natal">Enviar Mensagem</button>
+            </form>
+            <div id="mensagem-form" class="resposta-form"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Loja Natalina Magia de Natal. Todos os direitos reservados.</p>
+    </footer>
+
+    <button id="topo" title="Voltar ao topo">↑</button>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
