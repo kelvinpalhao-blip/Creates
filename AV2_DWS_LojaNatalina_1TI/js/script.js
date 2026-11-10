@@ -93,7 +93,7 @@ function atualizarCarrinho() {
 }
 
 // 4. SONS & ÁUDIO
-const musica = new Audio("https://cdn.pixabay.com/download/audio/2022/11/25/audio_24a25a0753.mp3?filename=jingle-bells-126565.mp3");
+const musica = new Audio("C:\\Users\\kelvin_palhao\\Downloads\\alex-morgan-merry-christmas-545481.mp3");
 musica.loop = true;
 musica.volume = 0.2;
 
@@ -114,7 +114,7 @@ function alternarMusica() {
 }
 
 function tocarSino() {
-    const sino = new Audio("https://cdn.pixabay.com/download/audio/2021/08/04/audio_bb630cc002.mp3?filename=bell-notification-9333.mp3");
+    const sino = new Audio("C:\\Users\\kelvin_palhao\\Downloads\\alex-morgan-merry-christmas-545481.mp3");
     sino.volume = 0.4;
     sino.play().catch(() => {});
 }
