@@ -3,8 +3,15 @@ function formatarPreco(valor) {
     return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
 
+const storage = typeof localStorage !== "undefined" ? localStorage : {
+    getItem: () => null,
+    setItem: () => {}
+};
+
 // 1. CARDS DINÂMICOS
 function criarCard(produto) {
+    const jaNoCarrinho = Array.isArray(carrinho) && carrinho.some(item => item.id === produto.id);
+
     return `
         <article class="card">
             <img src="${produto.imagem}" alt="${produto.nome}" loading="lazy">
@@ -12,7 +19,10 @@ function criarCard(produto) {
                 <h3>${produto.nome}</h3>
                 <p>${produto.descricao}</p>
                 <strong>${formatarPreco(produto.preco)}</strong>
-                <button class="btn-natal btn-comprar" data-id="${produto.id}">Adicionar ao Carrinho</button>
+                <div class="acoes-carrinho">
+                    <button class="btn-natal btn-comprar" data-id="${produto.id}">Adicionar ao Carrinho</button>
+                    ${jaNoCarrinho ? `<button class="btn-natal btn-remover" data-id="${produto.id}">Remover do Carrinho</button>` : ""}
+                </div>
             </div>
         </article>
     `;
@@ -70,16 +80,39 @@ function filtrarEOrdenar() {
 }
 
 // 3. CARRINHO DE COMPRAS & LOCALSTORAGE
-let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+let carrinho = [];
+
+try {
+    carrinho = JSON.parse(storage.getItem("carrinho")) || [];
+} catch (error) {
+    carrinho = [];
+}
+
+function persistirCarrinho() {
+    if (typeof localStorage !== "undefined") {
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    }
+}
 
 function adicionarAoCarrinho(id) {
-    const prod = produtos.find(p => p.id === id);
+    const listaProdutos = typeof produtos !== "undefined" ? produtos : [];
+    const prod = listaProdutos.find(p => p.id === id);
     if (prod) {
         carrinho.push(prod);
-        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+        persistirCarrinho();
         atualizarCarrinho();
         tocarSino();
     }
+}
+
+function removerDoCarrinho(id) {
+    const indice = carrinho.findIndex(item => item.id === id);
+    if (indice === -1) return false;
+
+    carrinho.splice(indice, 1);
+    persistirCarrinho();
+    atualizarCarrinho();
+    return true;
 }
 
 function atualizarCarrinho() {
@@ -93,13 +126,15 @@ function atualizarCarrinho() {
 }
 
 // 4. SONS & ÁUDIO
-const musica = new Audio("C:\\Users\\kelvin_palhao\\Downloads\\alex-morgan-merry-christmas-545481.mp3");
-musica.loop = true;
-musica.volume = 0.2;
+const musica = typeof Audio !== "undefined" ? new Audio("C:\\Users\\kelvin_palhao\\Downloads\\alex-morgan-merry-christmas-545481.mp3") : null;
+if (musica) {
+    musica.loop = true;
+    musica.volume = 0.2;
+}
 
 function alternarMusica() {
     const btn = document.getElementById("btn-musica");
-    if (!btn) return;
+    if (!btn || !musica) return;
 
     if (musica.paused) {
         musica.play().then(() => {
@@ -114,6 +149,7 @@ function alternarMusica() {
 }
 
 function tocarSino() {
+    if (typeof Audio === "undefined") return;
     const sino = new Audio("C:\\Users\\kelvin_palhao\\Downloads\\alex-morgan-merry-christmas-545481.mp3");
     sino.volume = 0.4;
     sino.play().catch(() => {});
@@ -266,33 +302,48 @@ function inicializarGerais() {
     document.querySelectorAll(".revelar").forEach(el => obs.observe(el));
 
     // Evento de clique para delegação de carrinho na grade
-    const areaProdutos = document.getElementById("lista-produtos") || document.getElementById("lista-destaques");
     document.addEventListener("click", (e) => {
-        if (e.target.classList.contains("btn-comprar")) {
-            const id = Number(e.target.dataset.id);
+        const botaoComprar = e.target.closest(".btn-comprar");
+        if (botaoComprar) {
+            const id = Number(botaoComprar.dataset.id);
             adicionarAoCarrinho(id);
+            if (typeof filtrarEOrdenar === "function") filtrarEOrdenar();
+            return;
+        }
+
+        const botaoRemover = e.target.closest(".btn-remover");
+        if (botaoRemover) {
+            const id = Number(botaoRemover.dataset.id);
+            removerDoCarrinho(id);
+            if (typeof filtrarEOrdenar === "function") filtrarEOrdenar();
         }
     });
 }
 
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = { carrinho, adicionarAoCarrinho, removerDoCarrinho, formatarPreco, atualizarCarrinho };
+}
+
 // EXECUÇÃO INICIAL
-document.addEventListener("DOMContentLoaded", () => {
-    mostrarProdutos(produtos);
-    mostrarDestaques();
-    atualizarCarrinho();
-    inicializarSlideshow();
-    criarNeve();
-    inicializarContagem();
-    inicializarParallax();
-    inicializarFormulario();
-    inicializarLightbox();
-    inicializarGerais();
+if (typeof document !== "undefined") {
+    document.addEventListener("DOMContentLoaded", () => {
+        mostrarProdutos(produtos);
+        mostrarDestaques();
+        atualizarCarrinho();
+        inicializarSlideshow();
+        criarNeve();
+        inicializarContagem();
+        inicializarParallax();
+        inicializarFormulario();
+        inicializarLightbox();
+        inicializarGerais();
 
-    const campoBusca = document.getElementById("busca");
-    const seletorCat = document.getElementById("categoria");
-    const seletorOrd = document.getElementById("ordenacao");
+        const campoBusca = document.getElementById("busca");
+        const seletorCat = document.getElementById("categoria");
+        const seletorOrd = document.getElementById("ordenacao");
 
-    if (campoBusca) campoBusca.addEventListener("input", filtrarEOrdenar);
-    if (seletorCat) seletorCat.addEventListener("change", filtrarEOrdenar);
-    if (seletorOrd) seletorOrd.addEventListener("change", filtrarEOrdenar);
-});
+        if (campoBusca) campoBusca.addEventListener("input", filtrarEOrdenar);
+        if (seletorCat) seletorCat.addEventListener("change", filtrarEOrdenar);
+        if (seletorOrd) seletorOrd.addEventListener("change", filtrarEOrdenar);
+    });
+}

@@ -267,6 +267,22 @@ main {
     display: block;
 }
 
+.acoes-carrinho {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.btn-remover {
+    background-color: var(--vermelho);
+    border-color: #8e1b2e;
+}
+
+.btn-remover:hover {
+    background-color: #8e1b2e;
+}
+
 .filtros-container {
     display: flex;
     gap: 1rem;
