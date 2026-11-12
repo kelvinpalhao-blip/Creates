@@ -3,13 +3,11 @@ SEGMENTO: Confeitaria & Kits Natalinos
 TURMA: 1TI_
 
 INTEGRANTES:
-- Integrante 1 (Nº xx) - Front-end e Estilização
-- Integrante 2 (Nº xx) - Programação JavaScript
-- Integrante 3 (Nº xx) - Catálogo e Conteúdo
+- Integrante 1 (Nº xx) - Front-end e Estilização, Programação JavaScript, Catálogo e Conteúdo.
 
 LINKS:
-Site (GitHub Pages): https://usuario.github.io/loja-natal-nomedaloja/
-Repositório (GitHub): https://github.com/usuario/loja-natal-nomedaloja
+Site (GitHub Pages): https://github.com/kelvinpalhao-blip/Creates/tree/main/AV2_DWS_LojaNatalina_1TI
+Repositório (GitHub): https://github.com/kelvinpalhao-blip/Creates
 Vídeo (YouTube): https://www.youtube.com/watch?v=...
 
 RECURSOS DE JAVASCRIPT IMPLEMENTADOS (11 recursos):
@@ -27,6 +25,6 @@ RECURSOS DE JAVASCRIPT IMPLEMENTADOS (11 recursos):
 12. Animações ao rolar com IntersectionObserver & Botão Voltar ao Topo - EXTRA
 
 CRÉDITOS:
-- Imagens: Unsplash (unsplash.com) & Pixabay (pixabay.com)
-- Sons: Pixabay Audio (pixabay.com/sound-effects)
-- Fontes: Google Fonts (Mountains of Christmas, Poppins)
+- Imagens: Google e Gemini e Leonardo.AI foram imagens feitas por IA e outras do próprio google.
+- Sons: Pixabay Audio (https://pixabay.com/pt/sound-effects/musical-merry-christmas-545481/)
+- Fontes: Google, Gemini e Copilot.

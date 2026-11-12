@@ -126,7 +126,8 @@ function atualizarCarrinho() {
 }
 
 // 4. SONS & ÁUDIO
-const musica = typeof Audio !== "undefined" ? new Audio("C:\\Users\\kelvin_palhao\\Downloads\\alex-morgan-merry-christmas-545481.mp3") : null;
+const arquivoAudio = "audio/musica-natal.mp3";
+const musica = typeof Audio !== "undefined" ? new Audio(arquivoAudio) : null;
 if (musica) {
     musica.loop = true;
     musica.volume = 0.2;
@@ -140,7 +141,7 @@ function alternarMusica() {
         musica.play().then(() => {
             btn.textContent = "⏸️ Pausar Música";
         }).catch(() => {
-            alert("Clique na página primeiro para liberar o áudio!");
+            alert("Não foi possível reproduzir o áudio. Confira se o arquivo audio/musica-natal.mp3 está na pasta do site.");
         });
     } else {
         musica.pause();
@@ -150,7 +151,7 @@ function alternarMusica() {
 
 function tocarSino() {
     if (typeof Audio === "undefined") return;
-    const sino = new Audio("C:\\Users\\kelvin_palhao\\Downloads\\alex-morgan-merry-christmas-545481.mp3");
+    const sino = new Audio(arquivoAudio);
     sino.volume = 0.4;
     sino.play().catch(() => {});
 }
